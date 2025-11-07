@@ -80,7 +80,6 @@ public class Program
         app.MapControllers();
         #endregion
 
-
         app.Run();
     }
 }
