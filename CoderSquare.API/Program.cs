@@ -1,6 +1,3 @@
-using CoderSquare.DAL.Repositories.Abstraction;
-using CoderSquare.DAL.Repositories.Implementaion;
-
 namespace CoderSquare.API;
 public class Program
 {
@@ -8,7 +5,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        #region Add services to the container
+        #region Add services to the container.
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -32,7 +29,8 @@ public class Program
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
             options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        }).AddJwtBearer(config =>
+        })
+            .AddJwtBearer(config =>
         {
             //config.SaveToken = true; // Save the JWT in the http context 
             config.TokenValidationParameters = new TokenValidationParameters()
@@ -49,7 +47,6 @@ public class Program
         });
         builder.Services.AddHttpContextAccessor();
 
-
         // Custom services
         builder.Services.AddScoped<IDbInitializer, DbInitializer>();
         builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
@@ -57,7 +54,8 @@ public class Program
         builder.Services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
         builder.Services.AddScoped<IPostRepository, PostRepository>();
         builder.Services.AddScoped<IPostService, PostService>();
-
+        builder.Services.AddScoped<ILikeRepository, LikeRepository>();
+        builder.Services.AddScoped<ILikeService, LikeService>();
         #endregion
 
         var app = builder.Build();
@@ -65,7 +63,7 @@ public class Program
         // Initialize Users & Roles
         await InitializeDb.InitializeDbAsync(app);
 
-        #region Configure the HTTP request pipeline
+        #region Configure the HTTP request pipeline.
         app.UseMiddleware<CustomExceptionHandlerMiddlewares>();
         if (app.Environment.IsDevelopment())
         {
@@ -81,6 +79,7 @@ public class Program
 
         app.MapControllers();
         #endregion
+
 
         app.Run();
     }

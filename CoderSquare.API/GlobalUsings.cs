@@ -16,4 +16,5 @@ global using CoderSquare.API.Middlewares;
 global using CoderSquare.DAL.Data.DataSeeding;
 global using System.Security.Claims;
 global using CoderSquare.BLL.DataTransferObjects;
-
+global using CoderSquare.DAL.Repositories.Abstraction;
+global using CoderSquare.DAL.Repositories.Implementaion;
