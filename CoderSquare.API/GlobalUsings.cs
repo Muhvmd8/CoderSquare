@@ -1,0 +1,19 @@
+﻿global using CoderSquare.DAL.Data.Context;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using CoderSquare.DAL.Data.Models;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Mvc;
+global using CoderSquare.BLL.DataTransferObjects.Identity;
+global using CoderSquare.BLL.Services;
+global using Microsoft.AspNetCore.Authorization;
+global using CoderSquare.API.Extensions;
+global using CoderSquare.BLL.DataTransferObjects.PostDTO;
+global using CoderSquare.BLL.Exceptions;
+global using Microsoft.IdentityModel.Tokens;
+global using System.Text;
+global using CoderSquare.API.Middlewares;
+global using CoderSquare.DAL.Data.DataSeeding;
+global using System.Security.Claims;
+global using CoderSquare.BLL.DataTransferObjects;
+

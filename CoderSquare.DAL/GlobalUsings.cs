@@ -1,0 +1,9 @@
+﻿global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
+global using CoderSquare.DAL.Data.Models;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using CoderSquare.DAL.Data.Context;
+global using CoderSquare.DAL.Repositories.Abstraction;
+global using Microsoft.Extensions.DependencyInjection;
+global using CoderSquare.DAL.Repositories.Implementaion;

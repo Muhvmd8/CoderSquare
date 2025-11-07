@@ -1,0 +1,16 @@
+﻿global using CoderSquare.BLL.DataTransferObjects.Identity;
+global using CoderSquare.DAL.Data.Models;
+global using Microsoft.AspNetCore.Identity;
+global using System.ComponentModel.DataAnnotations;
+global using System.Security.Claims;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.IdentityModel.Tokens;
+global using System.IdentityModel.Tokens.Jwt;
+global using System.Text;
+global using CoderSquare.BLL.DataTransferObjects.PostDTO;
+global using CoderSquare.BLL.Exceptions;
+global using CoderSquare.BLL.Services;
+global using CoderSquare.BLL.Factories;
+global using CoderSquare.BLL.DataTransferObjects;
+global using CoderSquare.DAL.Repositories.Abstraction;
+global using CoderSquare.DAL.Repositories.Implementaion;
